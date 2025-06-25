@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPOSITORY_URL = 'https://github.com/newdelthis/nginx_docker.git'
-        DOCKER_IMAGE_NAME = 'newdelthis/nginx_docker'
+        GIT_REPOSITORY_URL = 'https://github.com/sachink786/nginx_docker.git'
+        DOCKER_IMAGE_NAME = 'sachink777/nginx_docker'
         IMAGE_TAG = '1.0'
     }
 
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        withCredentials([usernamePassword(credentialsId: 'my-docker-hub-credentials-id', 
+                        withCredentials([usernamePassword(credentialsId: 'my-dockerhub-credentials-id', 
                                                          usernameVariable: 'DOCKER_USERNAME', 
                                                          passwordVariable: 'DOCKER_PASSWORD')]) {
                             // Explicit login before push
